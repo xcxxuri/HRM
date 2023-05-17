@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Update candidate</h1>
+
+    <div>
+        <label>candidate ID:</label>
+        <input [(ngModel)]="candidateId" type="number" class="form-control">
+    </div>
+    <button (click)="getCandidate()">Get candidate</button>
+
+    <div *ngIf="candidate">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="candidate.id" type="text" class="form-control" readonly>
+            <!-- First Name -->
+            <div class="my-3">
+                <span>Please Enter First Name*</span>
+                <input name="firstName" [(ngModel)]="candidate.firstName" type="text" class="form-control">
+            </div>
+            <!-- Middle Name -->
+            <div class="my-3">
+                <span>Please Enter Middle Name*</span>
+                <input name="middleName" [(ngModel)]="candidate.middleName" type="text" class="form-control">
+            </div>
+            <!-- Last Name -->
+            <div class="my-3">
+                <span>Please Enter Last Name*</span>
+                <input name="lastName" [(ngModel)]="candidate.lastName" type="text" class="form-control">
+            </div>
+            <!-- Email -->
+            <div class="my-3">
+                <span>Please Enter Email*</span>
+                <input name="email" [(ngModel)]="candidate.email" type="text" class="form-control">
+            </div> 
+            <!-- resumeURL -->
+            <div class="my-3">
+                <span>Please Enter resumeURL*</span>
+                <input name="resumeURL" [(ngModel)]="candidate.resumeURL" type="text" class="form-control">
+            </div>
+
+        </form>
+        <button (click)="updateCandidate()">Update candidate</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            candidate has been successfully updated.
+        </div>
+    </div>
+</div>

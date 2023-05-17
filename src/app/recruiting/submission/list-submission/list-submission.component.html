@@ -1,0 +1,64 @@
+
+<div class="container">
+    <h1>submission List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>JobRequirementId</th>
+                    <th>CandidateId</th>
+                    <th>SubmittedOn</th>
+                    <th>SubmissionStatusCode</th>
+                    <th>CreatedOn</th>
+                    <th>RejectedOn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of submissions" (click)="onSelectSubmission(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.jobRequirementId }}</td>
+                    <td>{{ e.candidateId }}</td>
+                    <td>{{ e.submittedOn }}</td>
+                    <td>{{ e.submissionStatusCode }}</td>
+                    <td>{{ e.createdOn }}</td>
+                    <td>{{ e.rejectedOn }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected submission</h1>
+
+    <form [formGroup]="submissionForm" *ngIf="selectedSubmission.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>JobRequirementId</label>
+            <input formControlName="jobRequirementId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>CandidateId</label>
+            <input formControlName="candidateId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>SubmittedOn</label>
+            <input formControlName="submittedOn" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>SubmissionStatusCode</label>
+            <input formControlName="submissionStatusCode" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>CreatedOn</label>
+            <input formControlName="createdOn" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>RejectedOn</label>
+            <input formControlName="rejectedOn" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

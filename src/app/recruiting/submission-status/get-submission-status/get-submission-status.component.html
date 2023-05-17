@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h1>Get submissionStatus By Id</h1>
+
+    <div>
+        <label>submissionStatus ID:</label>
+        <input [(ngModel)]="submissionStatusId" type="number" class="form-control">
+    </div>
+    <button (click)="getSubmissionStatus()">Get submissionStatus </button>
+
+    <div *ngIf="submissionStatus">
+        <h2>submissionStatus Details</h2>
+        <p><strong>ID:</strong> {{submissionStatus.id}}</p>
+        <p><strong>Description :</strong> {{submissionStatus.description}}</p>
+    </div>
+</div>

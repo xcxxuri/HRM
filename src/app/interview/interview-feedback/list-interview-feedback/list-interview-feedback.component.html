@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Interview Feedback List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of interviewFeedbacks" (click)="onSelectInterviewFeedback(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.rating }}</td>
+                    <td>{{ e.comment }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected Interview Feedback</h1>
+
+    <form [formGroup]="interviewFeedbackForm" *ngIf="selectedInterviewFeedback.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Rating</label>
+            <input formControlName="rating" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Comment</label>
+            <input formControlName="comment" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

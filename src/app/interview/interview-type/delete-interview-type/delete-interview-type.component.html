@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Delete Interview Type</h1>
+  </div>
+  
+  <div class="container">
+    <label for="interviewTypeId">Interview Type ID:</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="interviewTypeId"
+      name="interviewTypeId"
+      placeholder="Enter Interview Type ID to delete"
+    />
+    <button (click)="deleteInterviewType()" class="btn btn-danger mt-2">
+      Delete Interview Type
+    </button>
+    <div *ngIf="deleteSuccess" class="alert alert-success mt-2">
+        Interview Type has been successfully deleted.
+    </div>
+  </div>

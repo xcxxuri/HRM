@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Update submissionStatus</h1>
+
+    <div>
+        <label>submissionStatus ID:</label>
+        <input [(ngModel)]="submissionStatusId" type="number" class="form-control">
+    </div>
+    <button (click)="getSubmissionStatus()">Get submissionStatus</button>
+
+    <div *ngIf="submissionStatus">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="submissionStatus.id" type="text" class="form-control" readonly>
+            <!-- Description -->
+            <div class="my-3">
+                <span>Please Enter Description*</span>
+                <input name="description" [(ngModel)]="submissionStatus.description" type="text" class="form-control">
+            </div>
+        </form>
+        <button (click)="updateSubmissionStatus()">Update submissionStatus</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            submissionStatus has been successfully updated.
+        </div>
+    </div>
+</div>

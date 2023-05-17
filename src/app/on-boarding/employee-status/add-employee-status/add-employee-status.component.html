@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Add employeeStatus </h1>
+</div>
+
+<form [formGroup]="employeeStatusForm" (ngSubmit)="saveEmployeeStatus()">
+    <div class=" container">
+        <!-- description -->
+        <div class="my-3">
+            <span>Please Enter Description*</span>
+            <input type="text" class="form-control" placeholder="description" formControlName="description">
+            <span class="text-danger" *ngIf="description && description.invalid && description.touched">Invalid employeedescriptionStatusName</span>
+        </div>
+        <!-- abbr -->
+        <div class="my-3">
+            <span>Please Enter ABBR*</span>
+            <input type="text" class="form-control" placeholder="abbr" formControlName="abbr">
+            <span class="text-danger" *ngIf="abbr && abbr.invalid && abbr.touched">Invalid abbr</span>
+        </div>
+
+        
+        <!-- button -->
+        <button type="submit" [disabled]="!employeeStatusForm.valid" class="btn btn-primary">Add employeeStatus</button>
+    </div>
+
+</form>

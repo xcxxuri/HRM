@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Add Submission </h1>
+</div>
+
+<form [formGroup]="submissionForm" (ngSubmit)="saveSubmission()">
+    <div class=" container">
+        <!-- jobRequirementId -->
+        <div class="my-3">
+            <span>Please Enter job Requirement Id*</span>
+            <input type="text" class="form-control" placeholder="job Requirement Id" formControlName="jobRequirementId">
+            <span class="text-danger" *ngIf="jobRequirementId && jobRequirementId.invalid && jobRequirementId.touched">Invalid job Requirement Id</span>
+        </div>
+        <!-- candidateId -->
+        <div class="my-3">
+            <span>Please Enter candidate Id*</span>
+            <input type="text" class="form-control" placeholder="candidate Id" formControlName="candidateId">
+            <span class="text-danger" *ngIf="candidateId && candidateId.invalid && candidateId.touched">Invalid candidate Id</span>
+        </div>
+        <!-- submittedOn -->
+        <div class="my-3">
+            <span>Please Enter submitted On*</span>
+            <input type="text" class="form-control" placeholder="submitted On" formControlName="submittedOn">
+            <span class="text-danger" *ngIf="submittedOn && submittedOn.invalid && submittedOn.touched">Invalid submitted On</span>
+        </div>
+        <!-- submissionStatusCode -->
+        <div class="my-3">
+            <span>Please Enter submission Status Code*</span>
+            <input type="text" class="form-control" placeholder="submission Status Code" formControlName="submissionStatusCode">
+            <span class="text-danger" *ngIf="submissionStatusCode && submissionStatusCode.invalid && submissionStatusCode.touched">Invalid submission Status Code</span>
+        </div>
+        <!-- createdOn -->
+        <div class="my-3">
+            <span>Please Enter created On*</span>
+            <input type="text" class="form-control" placeholder="created On" formControlName="createdOn">
+            <span class="text-danger" *ngIf="createdOn && createdOn.invalid && createdOn.touched">Invalid created On</span>
+        </div>
+        <!-- rejectedOn -->
+        <div class="my-3">
+            <span>Please Enter rejected On*</span>
+            <input type="text" class="form-control" placeholder="rejected On" formControlName="rejectedOn">
+            <span class="text-danger" *ngIf="rejectedOn && rejectedOn.invalid && rejectedOn.touched">Invalid rejected On</span>
+        </div>
+
+
+
+        <!-- button -->
+        <button type="submit" [disabled]="!submissionForm.valid" class="btn btn-primary">Add Submission</button>
+    </div>
+
+</form>

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>employeeStatus List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>employeeStatusName</th>
+                    <th>Abbr</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employeeStatuses" (click)="onSelectEmployeeStatus(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.employeeStatusName }}</td>
+                    <td>{{ e.abbr }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected employeeStatus</h1>
+
+    <form [formGroup]="employeeStatusForm" *ngIf="selectedEmployeeStatus.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>description</label>
+            <input formControlName="description" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Abbr</label>
+            <input formControlName="abbr" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

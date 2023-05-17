@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>recruiter List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>EmployeeId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of recruiters" (click)="onSelectRecruiter(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.firstName }}</td>
+                    <td>{{ e.lastName }}</td>
+                    <td>{{ e.employeeId }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected recruiter</h1>
+
+    <form [formGroup]="recruiterForm" *ngIf="selectedRecruiter.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>EmployeeId</label>
+            <input formControlName="employeeId" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

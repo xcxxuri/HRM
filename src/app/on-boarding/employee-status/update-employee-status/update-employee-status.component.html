@@ -1,0 +1,30 @@
+
+<div class="container">
+    <h1>Update employeeStatus</h1>
+
+    <div>
+        <label>employeeStatus ID:</label>
+        <input [(ngModel)]="employeeStatusId" type="number" class="form-control">
+    </div>
+    <button (click)="getEmployeeStatus()">Get employeeStatus</button>
+
+    <div *ngIf="employeeStatus">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="employeeStatus.id" type="text" class="form-control" readonly>
+            <!-- description -->
+            <div class="my-3">
+                <span>Please Enter employeeStatusName*</span>
+                <input name="description" [(ngModel)]="employeeStatus.description" type="text" class="form-control">
+            </div>
+            <!-- abbr -->
+            <div class="my-3">
+                <span>Please Enter abbr*</span>
+                <input name="abbr" [(ngModel)]="employeeStatus.abbr" type="text" class="form-control">
+            </div>
+        </form>
+        <button (click)="updateEmployeeStatus()">Update employeeStatus</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            employeeStatus has been successfully updated.
+        </div>
+    </div>
+</div>

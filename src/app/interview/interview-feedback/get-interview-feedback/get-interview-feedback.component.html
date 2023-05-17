@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Get Interview Feedback By Id</h1>
+
+    <div>
+        <label>Interview Feedback ID:</label>
+        <input [(ngModel)]="interviewFeedbackId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewFeedback()">Get InterviewFeedback</button>
+
+    <div *ngIf="interviewFeedback">
+        <h2>Interview Feedback Details</h2>
+        <p><strong>ID:</strong> {{interviewFeedback.id}}</p>
+        <p><strong>Rating :</strong> {{interviewFeedback.rating}}</p>
+        <p><strong>Comment:</strong> {{interviewFeedback.comment}}</p>
+
+    </div>
+</div>

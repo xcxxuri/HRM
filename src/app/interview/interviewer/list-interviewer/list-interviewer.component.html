@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Interviewer List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>EmployeeId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of interviewers" (click)="onSelectInterviewer(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.firstName }}</td>
+                    <td>{{ e.lastName }}</td>
+                    <td>{{ e.employeeId }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected Interviewer</h1>
+
+    <form [formGroup]="interviewerForm" *ngIf="selectedInterviewer.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>EmployeeId</label>
+            <input formControlName="employeeId" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

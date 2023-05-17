@@ -1,0 +1,74 @@
+<div class="container">
+    <h1>Update employee</h1>
+
+    <div>
+        <label>employee ID:</label>
+        <input [(ngModel)]="employeeId" type="number" class="form-control">
+    </div>
+    <button (click)="getEmployee()">Get employee</button>
+
+    <div *ngIf="employee">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="employee.id" type="text" class="form-control" readonly>
+            <!-- First Name -->
+            <div class="my-3">
+                <span>Please Enter First Name*</span>
+                <input name="firstName" [(ngModel)]="employee.firstName" type="text" class="form-control">
+            </div>
+            <!-- Middle Name -->
+            <div class="my-3">
+                <span>Please Enter Middle Name*</span>
+                <input name="middleName" [(ngModel)]="employee.middleName" type="text" class="form-control">
+            </div>
+            <!-- Last Name -->
+            <div class="my-3">
+                <span>Please Enter Last Name*</span>
+                <input name="lastName" [(ngModel)]="employee.lastName" type="text" class="form-control">
+            </div>
+            <!-- SSN -->
+            <div class="my-3">
+                <span>Please Enter SSN*</span>
+                <input name="ssn" [(ngModel)]="employee.ssn" type="text" class="form-control">
+            </div>
+            <!-- Hire Date -->
+            <div class="my-3">
+                <span>Please Enter Hire Date*</span>
+                <input name="hireDate" [(ngModel)]="employee.hireDate" type="text" class="form-control">
+            </div>
+            <!-- End Date -->
+            <div class="my-3">
+                <span>Please Enter End Date*</span>
+                <input name="endDate" [(ngModel)]="employee.endDate" type="text" class="form-control">
+            </div>
+            <!-- Employee Category Id -->
+            <div class="my-3">
+                <span>Please Enter Employee Category Id*</span>
+                <input name="employeeCategoryId" [(ngModel)]="employee.employeeCategoryId" type="text" class="form-control">
+            </div>
+            <!-- Employee Status Id -->
+            <div class="my-3">
+                <span>Please Enter Employee Status Id*</span>
+                <input name="employeeStatusId" [(ngModel)]="employee.employeeStatusId" type="text" class="form-control">
+            </div>
+            <!-- Employee Role Id -->
+            <div class="my-3">
+                <span>Please Enter Employee Role Id*</span>
+                <input name="employeeRoleId" [(ngModel)]="employee.employeeRoleId" type="text" class="form-control">
+            </div>
+            <!-- Address -->
+            <div class="my-3">
+                <span>Please Enter Address*</span>
+                <input name="address" [(ngModel)]="employee.address" type="text" class="form-control">
+            </div>
+            <!-- Email -->
+            <div class="my-3">
+                <span>Please Enter Email*</span>
+                <input name="email" [(ngModel)]="employee.email" type="text" class="form-control">
+            </div> 
+        </form>
+        <button (click)="updateEmployee()">Update employee</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            employee has been successfully updated.
+        </div>
+    </div>
+</div>

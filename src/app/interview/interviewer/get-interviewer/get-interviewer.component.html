@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Get Interviewer By Id</h1>
+
+    <div>
+        <label>Interviewer ID:</label>
+        <input [(ngModel)]="interviewerId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewer()">Get Interviewer </button>
+
+    <div *ngIf="interviewer">
+        <h2>Interviewer Details</h2>
+        <p><strong>ID:</strong> {{interviewer.id}}</p>
+        <p><strong>First Name :</strong> {{interviewer.firstName}}</p>
+        <p><strong>Last Name :</strong> {{interviewer.lastName}}</p>
+        <p><strong>EmployeeId :</strong> {{interviewer.employeeId}}</p>
+    </div>
+</div>

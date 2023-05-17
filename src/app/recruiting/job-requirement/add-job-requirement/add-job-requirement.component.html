@@ -1,0 +1,67 @@
+<div class="container">
+    <h1>Add jobrequirement </h1>
+</div>
+
+<form [formGroup]="jobRequirementForm" (ngSubmit)="saveJobRequirement()">
+    <div class=" container">
+        <!-- numberOfPositions -->
+        <div class="my-3">
+            <span>Please Enter number Of Positions*</span>
+            <input type="text" class="form-control" placeholder="Number Of Positions" formControlName="numberOfPositions">
+            <span class="text-danger" *ngIf="numberOfPositions && numberOfPositions.invalid && numberOfPositions.touched">Invalid Number Of Positions</span>
+        </div>
+        <!-- title -->
+        <div class="my-3">
+            <span>Please Enter title*</span>
+            <input type="text" class="form-control" placeholder="Title" formControlName="title">
+            <span class="text-danger" *ngIf="title && title.invalid && title.touched">Invalid Title</span>
+        </div>
+        <!-- description -->
+        <div class="my-3">
+            <span>Please Enter description*</span>
+            <input type="text" class="form-control" placeholder="Description" formControlName="description">
+            <span class="text-danger" *ngIf="description && description.invalid && description.touched">Invalid Description</span>
+        </div>
+        <!-- hiringManagerId -->
+        <div class="my-3">
+            <span>Please Enter hiringManagerId*</span>
+            <input type="text" class="form-control" placeholder="Hiring Manager Id" formControlName="hiringManagerId">
+            <span class="text-danger" *ngIf="hiringManagerId && hiringManagerId.invalid && hiringManagerId.touched">Invalid Hiring Manager Id</span>
+        </div>
+        <!-- hiringManagerName -->
+        <div class="my-3">
+            <span>Please Enter hiringManagerName*</span>
+            <input type="text" class="form-control" placeholder="Hiring Manager Name" formControlName="hiringManagerName">
+            <span class="text-danger" *ngIf="hiringManagerName && hiringManagerName.invalid && hiringManagerName.touched">Invalid Hiring Manager Name</span>
+        </div>
+        <!-- startDate -->
+        <div class="my-3">
+            <span>Please Enter startDate*</span>
+            <input type="text" class="form-control" placeholder="Start Date" formControlName="startDate">
+            <span class="text-danger" *ngIf="startDate && startDate.invalid && startDate.touched">Invalid Start Date</span>
+        </div>
+        <!-- isActive -->
+        <!-- select button -->
+        <div class="form-check">
+            <input mdbCheckbox class="form-check-input" type="checkbox" [value]="true" id="flexCheckDefault" formControlName="isActive" />
+            <label class="form-check-label" for="flexRadioDefault1"> isActivate </label>
+        </div>
+        <!-- closedReason -->
+        <div class="my-3">
+            <span>Please Enter closedReason*</span>
+            <input type="text" class="form-control" placeholder="Closed Reason" formControlName="closedReason">
+            <span class="text-danger" *ngIf="closedReason && closedReason.invalid && closedReason.touched">Invalid Closed Reason</span>
+        </div>
+        <!-- createdOn -->
+        <div class="my-3">
+            <span>Please Enter createdOn*</span>
+            <input type="text" class="form-control" placeholder="Created On" formControlName="createdOn">
+            <span class="text-danger" *ngIf="createdOn && createdOn.invalid && createdOn.touched">Invalid Created On</span>
+        </div>
+
+
+        <!-- button -->
+        <button type="submit" [disabled]="!jobRequirementForm.valid" class="btn btn-primary">Add jobrequirement</button>
+    </div>
+
+</form>

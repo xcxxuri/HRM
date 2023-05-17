@@ -1,0 +1,65 @@
+    <!-- interviewForm = new FormGroup({
+        id: new FormControl(''),
+        recruiterId: new FormControl(''),
+        submissionId: new FormControl(''),
+        interviewTypeId: new FormControl(''),
+        interviewRound: new FormControl(''),
+        schduledOn: new FormControl(''),
+        interviewerId: new FormControl(''),
+        feedbackId: new FormControl('')
+    }); -->
+    <div class="container">
+        <h1>Update Interviews</h1>
+    
+        <div>
+            <label>Interviews ID:</label>
+            <input [(ngModel)]="interviewsId" type="number" class="form-control">
+        </div>
+        <button (click)="getInterviews()">Get Interviews</button>
+    
+        <div *ngIf="interviews">
+            <form #empForm="ngForm">
+                <input name="id" [(ngModel)]="interviews.id" type="text" class="form-control" readonly>
+                <!-- recruiterId -->
+                <div class="my-3">
+                    <span>Please Enter RecruiterId*</span>
+                    <input name="recruiterId" [(ngModel)]="interviews.recruiterId" type="text" class="form-control">
+                </div>
+                <!-- submissionId -->
+                <div class="my-3">
+                    <span>Please Enter SubmissionId*</span>
+                    <input name="submissionId" [(ngModel)]="interviews.submissionId" type="text" class="form-control">
+                </div>
+                <!-- interviewTypeId -->
+                <div class="my-3">
+                    <span>Please Enter InterviewTypeId*</span>
+                    <input name="interviewTypeId" [(ngModel)]="interviews.interviewTypeId" type="text" class="form-control">
+                </div>
+                <!-- interviewRound -->
+                <div class="my-3">
+                    <span>Please Enter InterviewRound*</span>
+                    <input name="interviewRound" [(ngModel)]="interviews.interviewRound" type="text" class="form-control">
+                </div>
+                <!-- schduledOn -->
+                <div class="my-3">
+                    <span>Please Enter SchduledOn*</span>
+                    <input name="schduledOn" [(ngModel)]="interviews.schduledOn" type="text" class="form-control">
+                </div>
+                <!-- interviewerId -->
+                <div class="my-3">
+                    <span>Please Enter InterviewerId*</span>
+                    <input name="interviewerId" [(ngModel)]="interviews.interviewerId" type="text" class="form-control">
+                </div>
+                <!-- feedbackId -->
+                <div class="my-3">
+                    <span>Please Enter FeedbackId*</span>
+                    <input name="feedbackId" [(ngModel)]="interviews.feedbackId" type="text" class="form-control">
+                </div>
+            </form>
+            <button (click)="updateInterviews()">Update Interviews</button>
+            <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+                Interviews has been successfully updated.
+            </div>
+        </div>
+    </div>
+    

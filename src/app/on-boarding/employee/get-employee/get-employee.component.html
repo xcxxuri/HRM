@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Get employee By Id</h1>
+
+    <div>
+        <label>employee ID:</label>
+        <input [(ngModel)]="employeeId" type="number" class="form-control">
+    </div>
+    <button (click)="getEmployee()">Get employee </button>
+
+    <div *ngIf="employee">
+        <h2>employee Details</h2>
+        <p><strong>ID:</strong> {{employee.id}}</p>
+        <p><strong>First Name :</strong> {{employee.firstName}}</p>
+        <p><strong>Middle Name :</strong> {{employee.middleName}}</p>
+        <p><strong>Last Name :</strong> {{employee.lastName}}</p>
+        <p><strong>SSN :</strong> {{employee.ssn}}</p>
+        <p><strong>Hire Date :</strong> {{employee.hireDate}}</p>
+        <p><strong>End Date :</strong> {{employee.endDate}}</p>
+        <p><strong>Employee Category Id :</strong> {{employee.employeeCategoryId}}</p>
+        <p><strong>Employee Status Id :</strong> {{employee.employeeStatusId}}</p>
+        <p><strong>Employee Role Id :</strong> {{employee.employeeRoleId}}</p>
+        <p><strong>Address :</strong> {{employee.address}}</p>
+        <p><strong>Email :</strong> {{employee.email}}</p>
+    </div>
+</div>

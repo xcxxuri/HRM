@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Update Interview Type</h1>
+
+    <div>
+        <label>Interview Type ID:</label>
+        <input [(ngModel)]="interviewTypeId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewType()">Get Interview Type</button>
+
+    <div *ngIf="interviewType">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="interviewType.id" type="text" class="form-control" readonly>
+            <!-- description -->
+            <div class="my-3">
+                <span>Please Enter Description*</span>
+                <input name="description" [(ngModel)]="interviewType.description" type="text" class="form-control">
+            </div>
+
+           
+
+        </form>
+        <button (click)="updateInterviewType()">Update Interview Type</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            Interview Type has been successfully updated.
+        </div>
+    </div>
+</div>

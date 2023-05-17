@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Add submissionStatus </h1>
+</div>
+
+<form [formGroup]="submissionStatusForm" (ngSubmit)="saveSubmissionStatus()">
+    <div class=" container">
+        <!-- description -->
+        <div class="my-3">
+            <span>Please Enter description*</span>
+            <input type="text" class="form-control" placeholder="description" formControlName="description">
+            <span class="text-danger" *ngIf="description && description.invalid && description.touched">Invalid description</span>
+        </div>
+
+        <!-- button -->
+        <button type="submit" [disabled]="!submissionStatusForm.valid" class="btn btn-primary">Add submissionStatus</button>
+    </div>
+
+</form>

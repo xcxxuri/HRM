@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>Add Employee </h1>
+</div>
+
+<form [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+    <div class=" container">
+        <!-- FirstName -->
+        <div class="my-3">
+            <span>Please Enter First Name*</span>
+            <input type="text" class="form-control" placeholder="FirstName" formControlName="firstName">
+            <span class="text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">Invalid First
+                Name</span>
+        </div>
+        <!-- middleName -->
+        <div class="my-3">
+            <span>Please Enter Middle Name*</span>
+            <input type="text" class="form-control" placeholder="MiddleName" formControlName="middleName">
+            <span class="text-danger" *ngIf="middleName && middleName.invalid && middleName.touched">Invalid Middle
+                Name</span>
+        </div>
+
+        <!-- LastName -->
+        <div class="my-3">
+            <span>Please Enter Last Name*</span>
+            <input type="text" class="form-control" placeholder="LastName" formControlName="lastName">
+            <span class="text-danger" *ngIf="lastName && lastName.invalid && lastName.touched">Invalid Last Name</span>
+        </div>
+
+        <!-- ssn -->
+        <div class="my-3">
+            <span>Please Enter ssn*</span>
+            <input type="text" class="form-control" placeholder="ssn" formControlName="ssn">
+            <span class="text-danger" *ngIf="ssn && ssn.invalid && ssn.touched">Invalid ssn</span>
+        </div>
+
+        <!-- hireDate -->
+        <div class="my-3">
+            <span>Please Enter hireDate*</span>
+            <input type="text" class="form-control" placeholder="hireDate" formControlName="hireDate">
+            <span class="text-danger" *ngIf="hireDate && hireDate.invalid && hireDate.touched">Invalid hireDate</span>
+        </div>
+
+        <!-- endDate -->
+        <div class="my-3">
+            <span>Please Enter endDate*</span>
+            <input type="text" class="form-control" placeholder="endDate" formControlName="endDate">
+            <span class="text-danger" *ngIf="endDate && endDate.invalid && endDate.touched">Invalid endDate</span>
+        </div>
+
+        <!-- employeeCategoryId -->
+        <div class="my-3">
+            <span>Please Enter employeeCategoryId*</span>
+            <input type="text" class="form-control" placeholder="employeeCategoryId"
+                formControlName="employeeCategoryId">
+            <span class="text-danger"
+                *ngIf="employeeCategoryId && employeeCategoryId.invalid && employeeCategoryId.touched">Invalid
+                employeeCategoryId</span>
+        </div>
+
+        <!-- employeeStatusId -->
+        <div class="my-3">
+            <span>Please Enter employeeStatusId*</span>
+            <input type="text" class="form-control" placeholder="employeeStatusId" formControlName="employeeStatusId">
+            <span class="text-danger"
+                *ngIf="employeeStatusId && employeeStatusId.invalid && employeeStatusId.touched">Invalid
+                employeeStatusId</span>
+        </div>
+
+        <!-- employeeRoleId -->
+        <div class="my-3">
+            <span>Please Enter employeeRoleId*</span>
+            <input type="text" class="form-control" placeholder="employeeRoleId" formControlName="employeeRoleId">
+            <span class="text-danger" *ngIf="employeeRoleId && employeeRoleId.invalid && employeeRoleId.touched">Invalid
+                employeeRoleId</span>
+        </div>
+
+        <!-- address -->
+        <div class="my-3">
+            <span>Please Enter address*</span>
+            <input type="text" class="form-control" placeholder="address" formControlName="address">
+            <span class="text-danger" *ngIf="address && address.invalid && address.touched">Invalid address</span>
+        </div>
+
+        <!-- email -->
+        <div class="my-3">
+            <span>Please Enter email*</span>
+            <input type="text" class="form-control" placeholder="email" formControlName="email">
+            <span class="text-danger" *ngIf="email && email.invalid && email.touched">Invalid email</span>
+        </div>
+
+        <!-- button -->
+        <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">Add employee</button>
+    </div>
+
+</form>

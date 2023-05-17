@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Add Interview Feedback</h1>
+</div>
+
+<form [formGroup]="interviewTypeForm" (ngSubmit)="saveInterviewType()">
+    <div class=" container">
+        <!-- description -->
+        <div class="my-3">
+            <span>Please Enter Description*</span>
+            <input type="text" class="form-control" placeholder="Description" formControlName="description">
+            <span class="text-danger" *ngIf="description && description.invalid && description.touched">Invalid Description</span>
+        </div>
+      
+        <!-- button -->
+        <button type="submit" [disabled]="!interviewTypeForm.valid" class="btn btn-primary">Add InterviewType</button>
+    </div>
+
+</form>

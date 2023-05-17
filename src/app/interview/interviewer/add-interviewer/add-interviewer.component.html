@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Add Interviewer </h1>
+</div>
+
+<form [formGroup]="interviewerForm" (ngSubmit)="saveInterviewer()">
+    <div class=" container">
+        <!-- FirstName -->
+        <div class="my-3">
+            <span>Please Enter First Name*</span>
+            <input type="text" class="form-control" placeholder="FirstName" formControlName="firstName">
+            <span class="text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">Invalid First Name</span>
+        </div>
+        <!-- LastName -->
+        <div class="my-3">
+            <span>Please Enter Last Name*</span>
+            <input type="text" class="form-control" placeholder="LastName" formControlName="lastName">
+            <span class="text-danger" *ngIf="lastName && lastName.invalid && lastName.touched">Invalid Last Name</span>
+        </div>
+
+        <!-- EmployeeId -->
+        <div class="my-3">
+            <span>Please Enter EmployeeId*</span>
+            <input type="text" class="form-control" placeholder="EmployeeId" formControlName="employeeId">
+            <span class="text-danger" *ngIf="employeeId && employeeId.invalid && employeeId.touched">Invalid EmployeeId</span>
+        </div>
+
+        <!-- button -->
+        <button type="submit" [disabled]="!interviewerForm.valid" class="btn btn-primary">Add Interviewer</button>
+    </div>
+
+</form>

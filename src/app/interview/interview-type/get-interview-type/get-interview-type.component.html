@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Get Interview Type By Id</h1>
+
+    <div>
+        <label>Interview Type ID:</label>
+        <input [(ngModel)]="interviewTypeId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewType()">Get Interview Type </button>
+
+    <div *ngIf="interviewType">
+        <h2>Interview Type Details</h2>
+        <p><strong>ID:</strong> {{interviewType.id}}</p>
+        <p><strong>Description :</strong> {{interviewType.description}}</p>
+
+
+    </div>
+</div>

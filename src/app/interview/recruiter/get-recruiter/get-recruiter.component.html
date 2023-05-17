@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Get recruiter By Id</h1>
+
+    <div>
+        <label>recruiter ID:</label>
+        <input [(ngModel)]="recruiterId" type="number" class="form-control">
+    </div>
+    <button (click)="getRecruiter()">Get recruiter </button>
+
+    <div *ngIf="recruiter">
+        <h2>recruiter Details</h2>
+        <p><strong>ID:</strong> {{recruiter.id}}</p>
+        <p><strong>First Name :</strong> {{recruiter.firstName}}</p>
+        <p><strong>Last Name :</strong> {{recruiter.lastName}}</p>
+        <p><strong>EmployeeId :</strong> {{recruiter.employeeId}}</p>
+    </div>
+</div>

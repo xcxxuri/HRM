@@ -1,0 +1,94 @@
+
+<div class="container">
+    <h1>employee List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>ssn</th>
+                    <th>hireDate</th>
+                    <th>endDate</th>
+                    <th>employeeCategoryId</th>
+                    <th>employeeStatusId</th>
+                    <th>employeeRoleId</th>
+                    <th>address</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employees" (click)="onSelectEmployee(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.firstName }}</td>
+                    <td>{{ e.middleName }}</td>
+                    <td>{{ e.lastName }}</td>
+                    <td>{{ e.ssn }}</td>
+                    <td>{{ e.hireDate }}</td>
+                    <td>{{ e.endDate }}</td>
+                    <td>{{ e.employeeCategoryId }}</td>
+                    <td>{{ e.employeeStatusId }}</td>
+                    <td>{{ e.employeeRoleId }}</td>
+                    <td>{{ e.address }}</td>
+                    <td>{{ e.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected employee</h1>
+
+    <form [formGroup]="employeeForm" *ngIf="selectedEmployee.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Middle Name</label>
+            <input formControlName="middleName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>ssn</label>
+            <input formControlName="ssn" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>hireDate</label>
+            <input formControlName="hireDate" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>endDate</label>
+            <input formControlName="endDate" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>employeeCategoryId</label>
+            <input formControlName="employeeCategoryId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>employeeStatusId</label>
+            <input formControlName="employeeStatusId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>employeeRoleId</label>
+            <input formControlName="employeeRoleId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>address</label>
+            <input formControlName="address" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input formControlName="email" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

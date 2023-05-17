@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Add Interview Feedback</h1>
+</div>
+
+<form [formGroup]="interviewsForm" (ngSubmit)="saveInterviews()">
+    <div class=" container">
+
+        <!-- interviewsForm = new FormGroup({
+            // validation
+            recruiterId: new FormControl('', [Validators.required ]),
+            submissionId: new FormControl('', [Validators.required ]),
+            interviewTypeId: new FormControl('', [Validators.required ]),
+            interviewRound: new FormControl('', [Validators.required ]),
+            schduledOn: new FormControl('', [Validators.required ]),
+            interviewerId: new FormControl('', [Validators.required ]),
+            feedbackId: new FormControl('', [Validators.required ])
+        }); -->
+
+        <!-- recruiterId -->
+        <div class="my-3">
+            <span>Please Enter RecruiterId*</span>
+            <input type="text" class="form-control" placeholder="RecruiterId" formControlName="recruiterId">
+            <span class="text-danger" *ngIf="recruiterId && recruiterId.invalid && recruiterId.touched">Invalid RecruiterId</span>
+        </div>
+        <!-- submissionId -->
+        <div class="my-3">
+            <span>Please Enter SubmissionId*</span>
+            <input type="text" class="form-control" placeholder="SubmissionId" formControlName="submissionId">
+            <span class="text-danger" *ngIf="submissionId && submissionId.invalid && submissionId.touched">Invalid SubmissionId</span>
+        </div>
+        <!-- interviewTypeId -->
+        <div class="my-3">
+            <span>Please Enter InterviewTypeId*</span>
+            <input type="text" class="form-control" placeholder="InterviewTypeId" formControlName="interviewTypeId">
+            <span class="text-danger" *ngIf="interviewTypeId && interviewTypeId.invalid && interviewTypeId.touched">Invalid InterviewTypeId</span>
+        </div>
+        <!-- interviewRound -->
+        <div class="my-3">
+            <span>Please Enter InterviewRound*</span>
+            <input type="text" class="form-control" placeholder="InterviewRound" formControlName="interviewRound">
+            <span class="text-danger" *ngIf="interviewRound && interviewRound.invalid && interviewRound.touched">Invalid InterviewRound</span>
+        </div>
+        <!-- schduledOn -->
+        <div class="my-3">
+            <span>Please Enter SchduledOn*</span>
+            <input type="text" class="form-control" placeholder="SchduledOn" formControlName="schduledOn">
+            <span class="text-danger" *ngIf="schduledOn && schduledOn.invalid && schduledOn.touched">Invalid SchduledOn</span>
+        </div>
+        <!-- interviewerId -->
+        <div class="my-3">
+            <span>Please Enter InterviewerId*</span>
+            <input type="text" class="form-control" placeholder="InterviewerId" formControlName="interviewerId">
+            <span class="text-danger" *ngIf="interviewerId && interviewerId.invalid && interviewerId.touched">Invalid InterviewerId</span>
+        </div>
+        <!-- feedbackId -->
+        <div class="my-3">
+            <span>Please Enter FeedbackId*</span>
+            <input type="text" class="form-control" placeholder="FeedbackId" formControlName="feedbackId">
+            <span class="text-danger" *ngIf="feedbackId && feedbackId.invalid && feedbackId.touched">Invalid FeedbackId</span>
+        </div>
+     
+
+      
+        <!-- button -->
+        <button type="submit" [disabled]="!interviewsForm.valid" class="btn btn-primary">Add Interviews</button>
+    </div>
+
+</form>

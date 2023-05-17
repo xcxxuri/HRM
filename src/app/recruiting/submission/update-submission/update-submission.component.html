@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Update submission</h1>
+
+    <div>
+        <label>submission ID:</label>
+        <input [(ngModel)]="submissionId" type="number" class="form-control">
+    </div>
+    <button (click)="getSubmission()">Get submission</button>
+
+    <div *ngIf="submission">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="submission.id" type="text" class="form-control" readonly>
+            <!-- JobRequirementId -->
+            <div class="my-3">
+                <span>Please Enter JobRequirementId*</span>
+                <input name="jobRequirementId" [(ngModel)]="submission.jobRequirementId" type="text" class="form-control">
+            </div>
+            <!-- candidate ID -->
+            <div class="my-3">
+                <span>Please Enter candidate ID*</span>
+                <input name="candidateId" [(ngModel)]="submission.candidateId" type="text" class="form-control">
+            </div>
+            <!-- SubmittedOn -->
+            <div class="my-3">
+                <span>Please Enter SubmittedOn*</span>
+                <input name="submittedOn" [(ngModel)]="submission.submittedOn" type="text" class="form-control">
+            </div>
+            <!-- SubmissionStatusCode -->
+            <div class="my-3">
+                <span>Please Enter SubmissionStatusCode*</span>
+                <input name="submissionStatusCode" [(ngModel)]="submission.submissionStatusCode" type="text" class="form-control">
+            </div>
+            <!-- CreatedOn -->
+            <div class="my-3">
+                <span>Please Enter CreatedOn*</span>
+                <input name="createdOn" [(ngModel)]="submission.createdOn" type="text" class="form-control">
+            </div>
+            <!-- RejectedOn -->
+            <div class="my-3">
+                <span>Please Enter RejectedOn*</span>
+                <input name="rejectedOn" [(ngModel)]="submission.rejectedOn" type="text" class="form-control">
+            </div>
+        </form>
+        <button (click)="updateSubmission()">Update submission</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            submission has been successfully updated.
+        </div>
+    </div>
+</div>

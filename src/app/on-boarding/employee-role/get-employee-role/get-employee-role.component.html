@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Get employeeRole By Id</h1>
+
+    <div>
+        <label>employeeRole ID:</label>
+        <input [(ngModel)]="employeeRoleId" type="number" class="form-control">
+    </div>
+    <button (click)="getEmployeeRole()">Get employeeRole </button>
+
+    <div *ngIf="employeeRole">
+        <h2>employeeRole Details</h2>
+        <p><strong>ID:</strong> {{employeeRole.id}}</p>
+        <p><strong>EmployeeRoleName :</strong> {{employeeRole.employeeRoleName}}</p>
+        <p><strong>Abbr :</strong> {{employeeRole.abbr}}</p>
+        
+    </div>
+</div>

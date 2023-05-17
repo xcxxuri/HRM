@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Interviews List</h1>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>recruiterId</th>
+                    <th>submissionId</th>
+                    <th>interviewTypeId</th>
+                    <th>interviewRound</th>
+                    <th>schduledOn</th>
+                    <th>interviewerId</th>
+                    <th>feedbackId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of interviews" (click)="onSelectInterviews(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.recruiterId }}</td>
+                    <td>{{ e.submissionId }}</td>
+                    <td>{{ e.interviewTypeId }}</td>
+                    <td>{{ e.interviewRound }}</td>
+                    <td>{{ e.schduledOn }}</td>
+                    <td>{{ e.interviewerId }}</td>
+                    <td>{{ e.feedbackId }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected Interviews</h1>
+
+    <form [formGroup]="interviewsForm" *ngIf="selectedInterviews.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>recruiterId</label>
+            <input formControlName="recruiterId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>submissionId</label>
+            <input formControlName="submissionId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>interviewTypeId</label>
+            <input formControlName="interviewTypeId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>interviewRound</label>
+            <input formControlName="interviewRound" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>schduledOn</label>
+            <input formControlName="schduledOn" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>interviewerId</label>
+            <input formControlName="interviewerId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>feedbackId</label>
+            <input formControlName="feedbackId" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

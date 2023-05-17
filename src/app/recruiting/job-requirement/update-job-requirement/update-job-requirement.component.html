@@ -1,0 +1,79 @@
+<!-- jobRequirement: any = {
+    id: null,
+    numberOfPositions : '',
+    title: '',
+    description: '',
+    hiringManagerId: '',
+    hiringManagerName: '',
+    startDate: '',
+    isActive: '',
+    closedReason: '',
+    createdOn: '',
+    jobCategory: '',
+    employeeType: '',
+}; -->
+<div class="container">
+    <h1>Update jobRequirement</h1>
+
+    <div>
+        <label>jobRequirement ID:</label>
+        <input [(ngModel)]="jobRequirementId" type="number" class="form-control">
+    </div>
+    <button (click)="getJobRequirement()">Get jobRequirement</button>
+
+    <div *ngIf="jobRequirement">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="jobRequirement.id" type="text" class="form-control" readonly>
+            <!-- Number Of Positions -->
+            <div class="my-3">
+                <span>Please Enter Number Of Positions*</span>
+                <input name="numberOfPositions" [(ngModel)]="jobRequirement.numberOfPositions" type="text" class="form-control">
+            </div>
+            <!-- Title -->
+            <div class="my-3">
+                <span>Please Enter Title*</span>
+                <input name="title" [(ngModel)]="jobRequirement.title" type="text" class="form-control">
+            </div>
+            <!-- Description -->
+            <div class="my-3">
+                <span>Please Enter Description*</span>
+                <input name="description" [(ngModel)]="jobRequirement.description" type="text" class="form-control">
+            </div>
+            <!-- Hiring Manager Id -->
+            <div class="my-3">
+                <span>Please Enter Hiring Manager Id*</span>
+                <input name="hiringManagerId" [(ngModel)]="jobRequirement.hiringManagerId" type="text" class="form-control">
+            </div>
+            <!-- Hiring Manager Name -->
+            <div class="my-3">
+                <span>Please Enter Hiring Manager Name*</span>
+                <input name="hiringManagerName" [(ngModel)]="jobRequirement.hiringManagerName" type="text" class="form-control">
+            </div>
+            <!-- Start Date -->
+            <div class="my-3">
+                <span>Please Enter Start Date*</span>
+                <input name="startDate" [(ngModel)]="jobRequirement.startDate" type="text" class="form-control">
+            </div>
+            <!-- Is Active -->
+            <div class="my-3">
+                <span>Please Enter Is Active*</span>
+                <input name="isActive" [(ngModel)]="jobRequirement.isActive" type="text" class="form-control">
+            </div>
+            <!-- Closed Reason -->
+            <div class="my-3">
+                <span>Please Enter Closed Reason*</span>
+                <input name="closedReason" [(ngModel)]="jobRequirement.closedReason" type="text" class="form-control">
+            </div>
+            <!-- Created On -->
+            <div class="my-3">
+                <span>Please Enter Created On*</span>
+                <input name="createdOn" [(ngModel)]="jobRequirement.createdOn" type="text" class="form-control">
+            </div>
+
+        </form>
+        <button (click)="updateJobRequirement()">Update jobRequirement</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            jobRequirement has been successfully updated.
+        </div>
+    </div>
+</div>

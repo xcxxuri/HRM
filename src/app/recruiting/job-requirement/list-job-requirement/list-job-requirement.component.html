@@ -1,0 +1,83 @@
+
+<div class="container">
+    <h1>jobRequirement List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Number Of Positions</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Hiring Manager Id</th>   
+                    <th>Hiring Manager Name</th>
+                    <th>Start Date</th>
+                    <th>Is Active</th>
+                    <th>Closed Reason</th>
+                    <th>Created On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of jobRequirements" (click)="onSelectJobRequirement(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.numberOfPositions }}</td>
+                    <td>{{ e.title }}</td>
+                    <td>{{ e.description }}</td>
+                    <td>{{ e.hiringManagerId }}</td>
+                    <td>{{ e.hiringManagerName }}</td>
+                    <td>{{ e.startDate }}</td>
+                    <td>{{ e.isActive }}</td>
+                    <td>{{ e.closedReason }}</td>
+                    <td>{{ e.createdOn }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected jobRequirement</h1>
+
+    <form [formGroup]="jobRequirementForm" *ngIf="selectedJobRequirement.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Number Of Positions</label>
+            <input formControlName="numberOfPositions" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input formControlName="title" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input formControlName="description" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Hiring Manager Id</label>
+            <input formControlName="hiringManagerId" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Hiring Manager Name</label>
+            <input formControlName="hiringManagerName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Start Date</label>
+            <input formControlName="startDate" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Is Active</label>
+            <input formControlName="isActive" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Closed Reason</label>
+            <input formControlName="closedReason" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Created On</label>
+            <input formControlName="createdOn" type="text" class="form-control" readonly>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,58 @@
+
+<div class="container">
+    <h1>candidate List</h1>
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>email</th>
+                    <th>resumeURL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of candidates" (click)="onSelectCandidate(e)" style="cursor:pointer">
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.firstName }}</td>
+                    <td>{{ e.middleName }}</td>
+                    <td>{{ e.lastName }}</td>
+                    <td>{{ e.email }}</td>
+                    <td>{{ e.resumeURL }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Selected candidate</h1>
+
+    <form [formGroup]="candidateForm" *ngIf="selectedCandidate.id" class="container">
+        <div class="form-group">
+            <label>ID</label>
+            <input formControlName="id" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Middle Name</label>
+            <input formControlName="middleName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            <input formControlName="email" type="text" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label>resumeURL</label>
+            <input formControlName="resumeURL" type="text" class="form-control" readonly>
+        </div>
+    </form>
+</div>

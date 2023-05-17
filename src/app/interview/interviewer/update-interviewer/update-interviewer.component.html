@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Update Interviewer</h1>
+
+    <div>
+        <label>Interviewer ID:</label>
+        <input [(ngModel)]="interviewerId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewer()">Get Interviewer</button>
+
+    <div *ngIf="interviewer">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="interviewer.id" type="text" class="form-control" readonly>
+            <!-- First Name -->
+            <div class="my-3">
+                <span>Please Enter First Name*</span>
+                <input name="firstName" [(ngModel)]="interviewer.firstName" type="text" class="form-control">
+            </div>
+            <!-- Last Name -->
+            <div class="my-3">
+                <span>Please Enter Last Name*</span>
+                <input name="lastName" [(ngModel)]="interviewer.lastName" type="text" class="form-control">
+            </div>
+            <!-- EmployeeId -->
+            <div class="my-3">
+                <span>Please Enter EmployeeId*</span>
+                <input name="employeeId" [(ngModel)]="interviewer.employeeId" type="text" class="form-control">
+            </div>
+           
+
+        </form>
+        <button (click)="updateInterviewer()">Update Interviewer</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            Interviewer has been successfully updated.
+        </div>
+    </div>
+</div>

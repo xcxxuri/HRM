@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Get employeeCategory By Id</h1>
+
+    <div>
+        <label>employeeCategory ID:</label>
+        <input [(ngModel)]="employeeCategoryId" type="number" class="form-control">
+    </div>
+    <button (click)="getEmployeeCategory()">Get employeeCategory </button>
+
+    <div *ngIf="employeeCategory">
+        <h2>employeeCategory Details</h2>
+        <p><strong>ID:</strong> {{employeeCategory.id}}</p>
+        <p><strong>Description :</strong> {{employeeCategory.description}}</p>
+        
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Delete Interview Feedback</h1>
+  </div>
+  
+  <div class="container">
+    <label for="interviewFeedbackId">Interview Feedback ID:</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="interviewFeedbackId"
+      name="interviewFeedbackId"
+      placeholder="Enter Interview Feedback ID to delete"
+    />
+    <button (click)="deleteInterviewFeedback()" class="btn btn-danger mt-2">
+      Delete Interview Feedback
+    </button>
+    <div *ngIf="deleteSuccess" class="alert alert-success mt-2">
+        Interview Feedback has been successfully deleted.
+    </div>
+  </div>

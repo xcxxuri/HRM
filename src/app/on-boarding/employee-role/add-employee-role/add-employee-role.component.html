@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Add employeeRole </h1>
+</div>
+
+<form [formGroup]="employeeRoleForm" (ngSubmit)="saveEmployeeRole()">
+    <div class=" container">
+        <!-- employeeRoleName -->
+        <div class="my-3">
+            <span>Please Enter employeeRoleName*</span>
+            <input type="text" class="form-control" placeholder="employeeRoleName" formControlName="employeeRoleName">
+            <span class="text-danger" *ngIf="employeeRoleName && employeeRoleName.invalid && employeeRoleName.touched">Invalid employeeRoleName</span>
+        </div>
+        <!-- abbr -->
+        <div class="my-3">
+            <span>Please Enter ABBR*</span>
+            <input type="text" class="form-control" placeholder="abbr" formControlName="abbr">
+            <span class="text-danger" *ngIf="abbr && abbr.invalid && abbr.touched">Invalid abbr</span>
+        </div>
+
+        
+        <!-- button -->
+        <button type="submit" [disabled]="!employeeRoleForm.valid" class="btn btn-primary">Add employeeRole</button>
+    </div>
+
+</form>

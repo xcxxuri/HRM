@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Update recruiter</h1>
+
+    <div>
+        <label>recruiter ID:</label>
+        <input [(ngModel)]="recruiterId" type="number" class="form-control">
+    </div>
+    <button (click)="getRecruiter()">Get recruiter</button>
+
+    <div *ngIf="recruiter">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="recruiter.id" type="text" class="form-control" readonly>
+            <!-- First Name -->
+            <div class="my-3">
+                <span>Please Enter First Name*</span>
+                <input name="firstName" [(ngModel)]="recruiter.firstName" type="text" class="form-control">
+            </div>
+            <!-- Last Name -->
+            <div class="my-3">
+                <span>Please Enter Last Name*</span>
+                <input name="lastName" [(ngModel)]="recruiter.lastName" type="text" class="form-control">
+            </div>
+            <!-- EmployeeId -->
+            <div class="my-3">
+                <span>Please Enter EmployeeId*</span>
+                <input name="employeeId" [(ngModel)]="recruiter.employeeId" type="text" class="form-control">
+            </div>
+           
+
+        </form>
+        <button (click)="updateRecruiter()">Update recruiter</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            recruiter has been successfully updated.
+        </div>
+    </div>
+</div>

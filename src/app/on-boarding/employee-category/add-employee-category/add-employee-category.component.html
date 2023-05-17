@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Add employeeCategory </h1>
+</div>
+
+<form [formGroup]="employeeCategoryForm" (ngSubmit)="saveEmployeeCategory()">
+    <div class=" container">
+        <!-- description -->
+        <div class="my-3">
+            <span>Please Enter Description*</span>
+            <input type="text" class="form-control" placeholder="Description" formControlName="description">
+            <span class="text-danger" *ngIf="description && description.invalid && description.touched">Invalid Description</span>
+        </div>
+        
+        <!-- button -->
+        <button type="submit" [disabled]="!employeeCategoryForm.valid" class="btn btn-primary">Add employeeCategory</button>
+    </div>
+
+</form>

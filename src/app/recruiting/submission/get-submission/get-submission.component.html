@@ -1,0 +1,21 @@
+
+<div class="container">
+    <h1>Get submission By Id</h1>
+
+    <div>
+        <label>submission ID:</label>
+        <input [(ngModel)]="submissionId" type="number" class="form-control">
+    </div>
+    <button (click)="getSubmission()">Get submission </button>
+
+    <div *ngIf="submission">
+        <h2>submission Details</h2>
+        <p><strong>ID:</strong> {{submission.id}}</p>
+        <p><strong>JobRequirementId :</strong> {{submission.jobRequirementId}}</p>
+        <p><strong>CandidateId :</strong> {{submission.candidateId}}</p>
+        <p><strong>SubmittedOn :</strong> {{submission.submittedOn}}</p>
+        <p><strong>SubmissionStatusCode :</strong> {{submission.submissionStatusCode}}</p>
+        <p><strong>CreatedOn :</strong> {{submission.createdOn}}</p>
+        <p><strong>RejectedOn :</strong> {{submission.rejectedOn}}</p>
+    </div>
+</div>

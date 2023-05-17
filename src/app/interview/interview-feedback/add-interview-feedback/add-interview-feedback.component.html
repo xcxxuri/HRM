@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Add Interview Feedback</h1>
+</div>
+
+<form [formGroup]="interviewFeedbackForm" (ngSubmit)="saveInterviewFeedback()">
+    <div class=" container">
+        <!-- rate -->
+        <div class="my-3">
+            <span>Please Enter Rating*</span>
+            <input type="text" class="form-control" placeholder="Rate" formControlName="rating">
+            <span class="text-danger" *ngIf="rating && rating.invalid && rating.touched">Invalid Rating</span>
+        </div>
+
+        <!-- comment -->
+        <div class="my-3">
+            <span>Please Enter Comment*</span>
+            <input type="text" class="form-control" placeholder="Comment" formControlName="comment">
+            <span class="text-danger" *ngIf="comment && comment.invalid && comment.touched">Invalid Comment</span>
+        </div>
+
+        
+        <!-- button -->
+        <button type="submit" [disabled]="!interviewFeedbackForm.valid" class="btn btn-primary">Add Employee</button>
+    </div>
+
+</form>

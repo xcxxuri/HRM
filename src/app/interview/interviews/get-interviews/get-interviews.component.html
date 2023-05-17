@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Get Interviews By Id</h1>
+
+    <div>
+        <label>Interviews ID:</label>
+        <input [(ngModel)]="interviewsId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviews()">Get Interviews </button>
+
+
+    <div *ngIf="interviews">
+        <h2>Interviews Details</h2>
+        <p><strong>ID:</strong> {{interviews.id}}</p>
+        <p><strong>RecruiterId :</strong> {{interviews.recruiterId}}</p>
+        <p><strong>SubmissionId :</strong> {{interviews.submissionId}}</p>
+        <p><strong>InterviewTypeId :</strong> {{interviews.interviewTypeId}}</p>
+        <p><strong>InterviewRound :</strong> {{interviews.interviewRound}}</p>
+        <p><strong>SchduledOn :</strong> {{interviews.schduledOn}}</p>
+        <p><strong>InterviewerId :</strong> {{interviews.interviewerId}}</p>
+        <p><strong>FeedbackId :</strong> {{interviews.feedbackId}}</p>
+
+
+
+    </div>
+</div>

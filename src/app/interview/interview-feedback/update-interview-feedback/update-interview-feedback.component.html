@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Update Interview Feedback</h1>
+
+    <div>
+        <label>Interview Feedback ID:</label>
+        <input [(ngModel)]="interviewFeedbackId" type="number" class="form-control">
+    </div>
+    <button (click)="getInterviewFeedback()">Get Interview Feedback</button>
+
+    <div *ngIf="interviewFeedback">
+        <form #empForm="ngForm">
+            <input name="id" [(ngModel)]="interviewFeedback.id" type="text" class="form-control" readonly>
+            <!-- rating -->
+            <div class="my-3">
+                <span>Please Enter Rating*</span>
+                <input name="rating" [(ngModel)]="interviewFeedback.rating" type="text" class="form-control">
+            </div>
+
+            <!-- comment  -->
+            <div class="my-3">
+                <span>Please Enter Comment</span>
+                <input name="comment" [(ngModel)]="interviewFeedback.comment" type="text" class="form-control">
+            </div>
+
+        </form>
+        <button (click)="updateInterviewFeedback()">Update Interview Feedback</button>
+        <div *ngIf="updateSuccess" class="alert alert-success mt-2">
+            Interview Feedback has been successfully updated.
+        </div>
+    </div>
+</div>

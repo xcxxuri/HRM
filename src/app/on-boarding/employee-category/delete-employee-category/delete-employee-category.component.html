@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Delete employeeCategory</h1>
+  </div>
+  
+  <div class="container">
+    <label for="employeeCategoryId">employeeCategory ID:</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="employeeCategoryId"
+      name="employeeCategoryId"
+      placeholder="Enter employeeCategory ID to delete"
+    />
+    <button (click)="deleteEmployeeCategory()" class="btn btn-danger mt-2">
+      Delete employeeCategory
+    </button>
+    <div *ngIf="deleteSuccess" class="alert alert-success mt-2">
+        employeeCategory has been successfully deleted.
+    </div>
+  </div>

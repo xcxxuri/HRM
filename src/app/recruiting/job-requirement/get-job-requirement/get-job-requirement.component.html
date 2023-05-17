@@ -1,0 +1,24 @@
+
+<div class="container">
+    <h1>Get jobRequirement By Id</h1>
+
+    <div>
+        <label>jobRequirement ID:</label>
+        <input [(ngModel)]="jobRequirementId" type="number" class="form-control">
+    </div>
+    <button (click)="getJobRequirement()">Get jobRequirement </button>
+
+    <div *ngIf="jobRequirement">
+        <h2>jobRequirement Details</h2>
+        <p><strong>ID:</strong> {{jobRequirement.id}}</p>
+        <p><strong>Number Of Positions :</strong> {{jobRequirement.numberOfPositions}}</p>
+        <p><strong>Title :</strong> {{jobRequirement.title}}</p>
+        <p><strong>Description :</strong> {{jobRequirement.description}}</p>
+        <p><strong>Hiring Manager Id :</strong> {{jobRequirement.hiringManagerId}}</p>
+        <p><strong>Hiring Manager Name :</strong> {{jobRequirement.hiringManagerName}}</p>
+        <p><strong>Start Date :</strong> {{jobRequirement.startDate}}</p>
+        <p><strong>Is Active :</strong> {{jobRequirement.isActive}}</p>
+        <p><strong>Closed Reason :</strong> {{jobRequirement.closedReason}}</p>
+        <p><strong>Created On :</strong> {{jobRequirement.createdOn}}</p>   
+    </div>
+</div>
